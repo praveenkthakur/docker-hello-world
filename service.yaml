@@ -1,0 +1,13 @@
+---
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: dockerhelloworld
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: REGISTRY_URL/replace-me-namespace/dockerhelloworld:BUILD_NUMBER
+          ports:
+            - containerPort: 3000
